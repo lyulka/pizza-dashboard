@@ -18,12 +18,12 @@ const OrderCard = ({orderGroup, index, innerRef}) => {
     }
 
     switch (orderGroup.status) {
-        case 'pending':
+        case 'Pending':
             break;
-        case 'preparing':
+        case 'Preparing':
             statusStyle.color = "#ad8b00" // 'yellow'
             break;
-        case 'delivered':
+        case 'Delivered':
             statusStyle.color = "#7cb305" // 'lime'
             break;
         default:

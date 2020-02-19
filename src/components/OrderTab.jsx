@@ -4,7 +4,7 @@ import { Droppable } from 'react-beautiful-dnd';
 
 import 'antd/dist/antd.css';
 
-const OrderTab = ({status, orders}) => {
+const OrderTab = ({column}) => {
     // Hierarchy:
     // OrderTab
     // -OrderCard
@@ -22,30 +22,26 @@ const OrderTab = ({status, orders}) => {
 
     return (
         <div className="order-tab" style={orderTabStyle}>
-            <h1>{status}</h1>
-            <Droppable droppableId={status}>
+            <h1 style={{ marginBottom: '24px' }}>{column.status}</h1>
+            <Droppable droppableId={column.status}>
                 {(provided) => (
                     <div className="order-card-container"
                         style={{ width: '90%', height: '100%' }}
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                         >
-                        {orders.map((orderGroup, index) => {
-                                if (orderGroup.status === status) {
-                                    return (
-                                        <OrderCard 
-                                            orderGroup={orderGroup}
-                                            index={index}
-                                            key={orderGroup.id}
-                                            >
-                                            {provided.placeholder}
-                                        </OrderCard>
-                                    );
-                                } else {
-                                    return null;
-                                }
-                            }
-                        )}
+                        {column.orderGroups.map((orderGroup, index) => {
+                            console.log(orderGroup.id);
+                            return (
+                                <OrderCard 
+                                    orderGroup={orderGroup}
+                                    index={index}
+                                    key={orderGroup.id}
+                                    >
+                                </OrderCard>
+                            );
+                        })}
+                    {provided.placeholder}
                     </div>
                 )}
             </Droppable>

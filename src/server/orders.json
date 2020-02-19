@@ -11,7 +11,7 @@
         "quantity": 2
       }
     ],
-    "status": "delivered"
+    "status": "Delivered"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
         "quantity": 1
       }
     ],
-    "status": "preparing"
+    "status": "Preparing"
   },
   {
     "id": 3,
@@ -31,6 +31,6 @@
         "quantity": 5
       }
     ],
-    "status": "pending"
+    "status": "Pending"
   }
 ]
